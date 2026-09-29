@@ -1,5 +1,4 @@
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import Navbar from "../components/Navbar"
@@ -11,6 +10,15 @@ import { generateDietPlan } from "../data/dietData"
 
 function Planner() {
   const navigate = useNavigate()
+
+  // -----------------------------------------
+  // SCROLL TO TOP WHEN PLANNER OPENS
+  // -----------------------------------------
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
 
   // -----------------------------------------
   // FORM STATE
@@ -60,7 +68,6 @@ function Planner() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // Clear previous error
     setError("")
 
 
@@ -137,7 +144,9 @@ function Planner() {
         !Number.isFinite(feet) ||
         feet <= 0
       ) {
-        setError("Please enter a valid height in feet.")
+        setError(
+          "Please enter a valid height in feet."
+        )
         return
       }
 
