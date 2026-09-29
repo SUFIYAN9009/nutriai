@@ -20,6 +20,7 @@ function Navbar() {
   return (
     <nav className="navbar">
 
+      {/* Logo */}
       <button
         type="button"
         className="logo navbar-button"
@@ -32,6 +33,7 @@ function Navbar() {
         NutriAI
       </button>
 
+      {/* Navigation */}
       <div className="nav-links">
 
         <button
@@ -50,6 +52,7 @@ function Navbar() {
 
         <button
           type="button"
+          className="my-plan-link"
           onClick={goMyPlan}
         >
           My Plan
@@ -57,6 +60,7 @@ function Navbar() {
 
       </div>
 
+      {/* Create Plan */}
       <button
         type="button"
         className="nav-button"
@@ -70,3 +74,4 @@ function Navbar() {
 }
 
 export default Navbar
+
